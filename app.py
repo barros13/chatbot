@@ -124,8 +124,7 @@ def processar_resposta_final_com_ia(prompt_usuario, documentos_brutos, cursor_pd
     Sua resposta final não DEVE conter números de documentos:
     Exemplo 1: 
     Saída Incorreta: Processo Seletivo de Contratação Temporária de Motoristas (documento 11)
-    Saída CORRETA: Processo Seletivo de Contratação Temporária de Motoristas
-    Formatação da Saída CORRETA: Use a tag ênfase (<em>"nome do documento"</em>) quando for o nome de um documento ao invés de citar o número do documento. 
+    Saída CORRETA: Processo Seletivo de Contratação Temporária de Motoristas 
     
     ---
     **Pergunta do Usuário:** "{prompt_usuario}"
