@@ -18,7 +18,9 @@ CORS(app)
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
-
+generation_config = genai.GenerationConfig(response_mime_type="application/json")
+model = genai.GenerativeModel("gemini-2.5-flash", generation_config=generation_config)
+cache_respostas = {}
 DB_CONFIG_PDFS = {
     'host': os.getenv("DB_PDF_HOST"),
     'user': os.getenv("DB_PDF_USER"),
@@ -142,7 +144,7 @@ def processar_resposta_final_com_ia(prompt_usuario, documentos_brutos, cursor_pd
 
 
 # --- ROTA PRINCIPAL DA API ---
-cache_respostas = {}
+
 @app.route('/api/perguntar', methods=['GET', 'OPTIONS'])
 @cross_origin()
 def perguntar():
