@@ -142,7 +142,7 @@ def processar_resposta_final_com_ia(prompt_usuario, documentos_brutos, cursor_pd
 
 
 # --- ROTA PRINCIPAL DA API ---
-
+cache_respostas = {}
 @app.route('/api/perguntar', methods=['GET', 'OPTIONS'])
 @cross_origin()
 def perguntar():
