@@ -6,26 +6,34 @@ import google.generativeai as genai
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 from google.api_core.exceptions import ResourceExhausted
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 # --- CONFIGURAÇÕES GLOBAIS ---
 
-GEMINI_API_KEY = "AIzaSyAtXheLqFjmeiH-3ftvbKAjr9UV5QAtyVo"  # SUBSTITUA PELA SUA CHAVE REAL
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=GEMINI_API_KEY)
 
-generation_config = genai.GenerationConfig(response_mime_type="application/json")
-model = genai.GenerativeModel("gemini-2.5-flash", generation_config=generation_config)
-cache_respostas = {}
+DB_CONFIG_PDFS = {
+    'host': os.getenv("DB_PDF_HOST"),
+    'user': os.getenv("DB_PDF_USER"),
+    'password': os.getenv("DB_PDF_PASSWORD"),
+    'database': os.getenv("DB_PDF_NAME")
+}
 
-DB_CONFIG_PDFS = {'host': 'pdf_content.mysql.dbaas.com.br', 'user': 'pdf_content', 'password': 'Pmsmm@1987',
-                  'database': 'pdf_content'}
-DB_CONFIG_SITE = {'host': 'pmsmm_db.mysql.dbaas.com.br', 'user': 'pmsmm_db', 'password': 'Capricornio198',
-                  'database': 'pmsmm_db'}
+DB_CONFIG_SITE = {
+    'host': os.getenv("DB_SITE_HOST"),
+    'user': os.getenv("DB_SITE_USER"),
+    'password': os.getenv("DB_SITE_PASSWORD"),
+    'database': os.getenv("DB_SITE_NAME")
+}
 
-BASE_URL = "https://www.pmsmm.rj.gov.br/"
-
+BASE_URL = os.getenv("BASE_URL")
 
 # --- FUNÇÕES AUXILIARES ---
 
