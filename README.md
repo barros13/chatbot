@@ -1,7 +1,6 @@
 # Busca Inteligente
 
-![Screenshot do Chatbot]
-(https://i.imgur.com/xZniCjl.png)
+![Screenshot do Chatbot](https://i.imgur.com/xZniCjl.png)
 (https://i.imgur.com/nB6BLau.png)
 
 ## ❯ Sobre o Projeto
