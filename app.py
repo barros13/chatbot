@@ -119,7 +119,14 @@ def processar_resposta_final_com_ia(prompt_usuario, documentos_brutos, cursor_pd
     Sua resposta final DEVE ser um objeto JSON com duas chaves:
     -   `"resposta"`: Uma string contendo o texto da resposta.
     -   `"documentos_utilizados"`: Um array contendo APENAS os IDs numéricos dos documentos que você usou.
-
+    
+    **Regras da Saída:**
+    Sua resposta final não DEVE conter números de documentos:
+    Exemplo 1: 
+    Saída Incorreta: Processo Seletivo de Contratação Temporária de Motoristas (documento 11)
+    Saída CORRETA: Processo Seletivo de Contratação Temporária de Motoristas
+    Formatação da Saída CORRETA: Use a tag ênfase (<em>"nome do documento"</em>) quando for o nome de um documento ao invés de citar o número do documento. 
+    
     ---
     **Pergunta do Usuário:** "{prompt_usuario}"
     **Lista de Documentos:**
