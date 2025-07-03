@@ -1,8 +1,8 @@
 # Busca Inteligente
 
 ![Screenshot do Chatbot]
-[img]https://i.imgur.com/xZniCjl.png[/img]
-[img]https://i.imgur.com/nB6BLau.png[/img]
+(https://i.imgur.com/xZniCjl.png)
+(https://i.imgur.com/nB6BLau.png)
 
 ## ❯ Sobre o Projeto
 
