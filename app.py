@@ -124,7 +124,10 @@ def processar_resposta_final_com_ia(prompt_usuario, documentos_brutos, cursor_pd
     Sua resposta final não DEVE conter números de documentos:
     Exemplo 1: 
     Saída Incorreta: Processo Seletivo de Contratação Temporária de Motoristas (documento 11)
-    Saída CORRETA: Processo Seletivo de Contratação Temporária de Motoristas 
+    Saída CORRETA: Processo Seletivo de Contratação Temporária de Motoristas
+    - Após a resposta principal, pule uma linha (como uma quebra visual) e adicione a seguinte dica curta:
+    "- Se a resposta não for o que você esperava, tente incluir o ano ou mais detalhes na pergunta."
+    
     
     ---
     **Pergunta do Usuário:** "{prompt_usuario}"
