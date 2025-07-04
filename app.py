@@ -14,6 +14,12 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
+# --- ROTA DE HEALTH CHECK (Requisição leve para manter o Render plano free "vivo" usando UptimeRobot que vai verificar se o app está no ar. Dispensável se você estiver usando outro serviço ou um plano mais robusto. ---
+@app.route('/health', methods=['GET'])
+def health_check():
+    """Endpoint leve para verificação de status."""
+    return jsonify({"status": "ok"}), 200
+
 # --- CONFIGURAÇÕES GLOBAIS ---
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
